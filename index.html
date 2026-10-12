@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Baromètre (maquette)</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Le Baromètre, Floreffe : tapas, croquettes, tartares, pâtes, grillades sur braises, bières belges artisanales, vins, afterworks et concerts.">
+  <meta name="theme-color" content="#16120f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+  <div class="mock-banner" role="note">Maquette de refonte non officielle — ce site n'est pas affilié au Baromètre. Site officiel : <a href="https://www.lebarometre.be/">lebarometre.be</a></div>
+
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a href="#top" class="brand" aria-label="Le Baromètre, accueil">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16 L23 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="16" r="2.4" fill="currentColor"/></svg>
+        </span>
+        Le Baromètre
+      </a>
+      <nav aria-label="Navigation principale">
+        <button class="nav__toggle" aria-expanded="false" aria-controls="menu">
+          <span class="sr">Menu</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <ul class="nav__links" id="menu">
+          <li><a href="#carte">La carte</a></li>
+          <li><a href="#ambiance">Ambiance</a></li>
+          <li><a href="#infos">Horaires</a></li>
+          <li><a href="#contact">Accès</a></li>
+          <li><a class="btn btn--sm" href="tel:+3281451691">Réserver</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="wrap hero__inner">
+        <div class="hero__text reveal">
+          <p class="status" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Floreffe · Rue Camille Giroul</span></p>
+          <h1>Un bar.<br><em>Dix façons</em> de passer à table.</h1>
+          <p class="lead">Tapas, croquettes, tartares, grillades sur braises, bières belges artisanales et soirées concerts — au cœur de Floreffe.</p>
+          <div class="hero__cta">
+            <a class="btn" href="tel:+3281451691">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+              081 45 16 91
+            </a>
+            <a class="btn btn--ghost" href="#carte">Découvrir la carte</a>
+          </div>
+        </div>
+        <div class="gauge reveal" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e9a15b"/><stop offset="1" stop-color="#c2562b"/></linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+            <path d="M30 130 A75 75 0 1 1 170 130" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" class="gauge__arc"/>
+            <g class="gauge__ticks" stroke="rgba(255,255,255,.35)" stroke-width="2"></g>
+            <g class="gauge__needle"><path d="M100 100 L100 40" stroke="#f3e7d8" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="100" r="8" fill="#f3e7d8"/></g>
+            <text x="100" y="150" text-anchor="middle" class="gauge__label">AMBIANCE</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTE -->
+    <section class="section" id="carte">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="eyebrow">La carte</p>
+          <h2>Choisissez votre bar.</h2>
+          <p class="muted">Une seule adresse, plein d'envies. On partage, on picore, on reste.</p>
+        </header>
+        <ul class="bars">
+          <li class="bar reveal"><span class="bar__n">01</span><h3>Tapas</h3><p>Petites assiettes à partager entre amis.</p></li>
+          <li class="bar reveal"><span class="bar__n">02</span><h3>Croquettes</h3><p>Croustillantes dehors, fondantes dedans.</p></li>
+          <li class="bar reveal"><span class="bar__n">03</span><h3>Tartares</h3><p>Préparés minute, assaisonnés avec soin.</p></li>
+          <li class="bar reveal"><span class="bar__n">04</span><h3>Pastas</h3><p>Des pâtes généreuses et réconfortantes.</p></li>
+          <li class="bar reveal"><span class="bar__n">05</span><h3>Boulettes</h3><p>Un classique belge, fait maison.</p></li>
+          <li class="bar bar--feature reveal"><span class="bar__n">06</span><h3>Grillades sur braises</h3><p>Le feu de bois, la vraie cuisson. Notre signature.</p></li>
+          <li class="bar reveal"><span class="bar__n">07</span><h3>Desserts</h3><p>Pour finir en douceur.</p></li>
+          <li class="bar bar--feature reveal"><span class="bar__n">08</span><h3>Bières belges</h3><p>Uniquement artisanales. Une sélection de brasseries locales.</p></li>
+          <li class="bar reveal"><span class="bar__n">09</span><h3>Vins</h3><p>Au verre ou à la bouteille.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AMBIANCE -->
+    <section class="section section--alt" id="ambiance">
+      <div class="wrap ambiance">
+        <div class="reveal">
+          <p class="eyebrow">Afterworks & concerts</p>
+          <h2>Le baromètre monte en fin de semaine.</h2>
+          <p class="muted">Terrasse, musique live et afterworks : le Baromètre est autant un lieu de rencontre qu'une table. Suivez notre page Facebook pour la programmation des concerts.</p>
+          <a class="link" href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener">Voir les prochains événements →</a>
+        </div>
+        <div class="mosaic reveal" aria-label="Photos du Baromètre">
+          <!-- Remplacez ces blocs par vos photos : <img src="img/terrasse.jpg" alt="..."> -->
+          <figure class="ph ph--a"><figcaption>La terrasse</figcaption></figure>
+          <figure class="ph ph--b"><figcaption>Le bar</figcaption></figure>
+          <figure class="ph ph--c"><figcaption>Les boulettes</figcaption></figure>
+          <figure class="ph ph--d"><figcaption>La façade</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFOS -->
+    <section class="section" id="infos">
+      <div class="wrap infos">
+        <div class="card reveal">
+          <p class="eyebrow">Horaires</p>
+          <h2 class="h3">Quand passer ?</h2>
+          <table class="hours" aria-label="Heures d'ouverture">
+            <tbody>
+              <tr data-day="1"><th scope="row">Lundi</th><td class="closed">Fermé</td></tr>
+              <tr data-day="2"><th scope="row">Mardi</th><td class="closed">Fermé</td></tr>
+              <tr data-day="3"><th scope="row">Mercredi</th><td>Midi & soir</td></tr>
+              <tr data-day="4"><th scope="row">Jeudi</th><td>Midi & soir</td></tr>
+              <tr data-day="5"><th scope="row">Vendredi</th><td>Midi & soir</td></tr>
+              <tr data-day="6"><th scope="row">Samedi</th><td>Midi</td></tr>
+              <tr data-day="0"><th scope="row">Dimanche</th><td class="closed">Fermé</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card reveal" id="contact">
+          <p class="eyebrow">Accès</p>
+          <h2 class="h3">Où nous trouver ?</h2>
+          <address>
+            11, Rue Camille Giroul<br>5150 Floreffe, Belgique
+          </address>
+          <p class="muted small">Grand parking sur la place de Soviret.</p>
+          <div class="actions">
+            <a class="btn" href="tel:+3281451691">Appeler</a>
+            <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=11+Rue+Camille+Giroul+5150+Floreffe">Itinéraire</a>
+          </div>
+          <div class="map">
+            <iframe title="Carte : 11 Rue Camille Giroul, Floreffe" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=11+Rue+Camille+Giroul,+5150+Floreffe&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>Maquette non officielle réalisée à titre de démonstration · <span id="y"></span></p>
+      <a href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z" fill="currentColor"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <a class="fab" href="tel:+3281451691" aria-label="Appeler le Baromètre">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
