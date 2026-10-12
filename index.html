@@ -5,69 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Le Baromètre (maquette)</title>
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Le Baromètre, Floreffe : tapas, croquettes, tartares, pâtes, grillades sur braises, bières belges artisanales, vins, afterworks et concerts.">
-  <meta name="theme-color" content="#16120f">
+  <meta name="description" content="Maquette de refonte non officielle du Baromètre, Floreffe : tapas, croquettes, tartares, grillades sur braises, bières belges artisanales, vins, afterworks et concerts.">
+  <meta name="theme-color" content="#f4ece1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
-  <div class="mock-banner" role="note">Maquette de refonte non officielle — ce site n'est pas affilié au Baromètre. Site officiel : <a href="https://www.lebarometre.be/">lebarometre.be</a></div>
+  <div class="mock-banner" role="note">
+    Maquette de refonte non officielle — non affiliée au Baromètre. Site officiel :
+    <a href="https://www.lebarometre.be/">lebarometre.be</a>
+  </div>
 
   <header class="nav" id="top">
     <div class="wrap nav__inner">
-      <a href="#top" class="brand" aria-label="Le Baromètre, accueil">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16 L23 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="16" r="2.4" fill="currentColor"/></svg>
-        </span>
-        Le Baromètre
+      <a href="#top" class="brand" aria-label="Le Baromètre, retour en haut">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16 22.5 9.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="16" r="2.4" fill="currentColor"/></svg>
+        <span>Le Baromètre</span>
       </a>
       <nav aria-label="Navigation principale">
-        <button class="nav__toggle" aria-expanded="false" aria-controls="menu">
-          <span class="sr">Menu</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </button>
         <ul class="nav__links" id="menu">
-          <li><a href="#carte">La carte</a></li>
-          <li><a href="#ambiance">Ambiance</a></li>
-          <li><a href="#infos">Horaires</a></li>
-          <li><a href="#contact">Accès</a></li>
-          <li><a class="btn btn--sm" href="tel:+3281451691">Réserver</a></li>
+          <li><a href="#carte">Carte</a></li>
+          <li><a href="#bieres">Bières</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#infos">Infos</a></li>
         </ul>
       </nav>
+      <div class="nav__end">
+        <button class="icon-btn" id="theme-toggle" aria-label="Changer de thème">
+          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="btn btn--sm hide-sm" href="tel:+3281451691">Réserver</a>
+        <button class="icon-btn nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="main">
     <!-- HERO -->
     <section class="hero">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <div class="wrap hero__inner">
-        <div class="hero__text reveal">
-          <p class="status" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Floreffe · Rue Camille Giroul</span></p>
-          <h1>Un bar.<br><em>Dix façons</em> de passer à table.</h1>
-          <p class="lead">Tapas, croquettes, tartares, grillades sur braises, bières belges artisanales et soirées concerts — au cœur de Floreffe.</p>
-          <div class="hero__cta">
+      <div class="wrap">
+        <p class="pill reveal" id="status" aria-live="polite"><span class="dot"></span><span id="status-text">Floreffe · Mer → Sam</span></p>
+        <h1 class="hero__title reveal">
+          La pression monte<br>
+          <span class="accent">à Floreffe.</span>
+        </h1>
+        <div class="hero__grid">
+          <p class="hero__lead reveal">Un bar de village qui fait cuisine sérieuse : petites assiettes à partager, grillades sur braises, bières belges artisanales et concerts en fin de semaine.</p>
+          <div class="hero__cta reveal">
             <a class="btn" href="tel:+3281451691">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
-              081 45 16 91
+              Réserver · 081 45 16 91
             </a>
-            <a class="btn btn--ghost" href="#carte">Découvrir la carte</a>
+            <a class="btn btn--ghost" href="#carte">Voir la carte</a>
           </div>
         </div>
-        <div class="gauge reveal" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <defs>
-              <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#e9a15b"/><stop offset="1" stop-color="#c2562b"/></linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
-            <path d="M30 130 A75 75 0 1 1 170 130" fill="none" stroke="url(#g)" stroke-width="10" stroke-linecap="round" class="gauge__arc"/>
-            <g class="gauge__ticks" stroke="rgba(255,255,255,.35)" stroke-width="2"></g>
-            <g class="gauge__needle"><path d="M100 100 L100 40" stroke="#f3e7d8" stroke-width="4" stroke-linecap="round"/><circle cx="100" cy="100" r="8" fill="#f3e7d8"/></g>
-            <text x="100" y="150" text-anchor="middle" class="gauge__label">AMBIANCE</text>
-          </svg>
+
+        <dl class="facts reveal">
+          <div><dt>Cuisine</dt><dd>9 « bars »</dd></div>
+          <div><dt>Bières</dt><dd>100 % artisanales</dd></div>
+          <div><dt>Cuisson</dt><dd>Sur braises</dd></div>
+          <div><dt>Parking</dt><dd>Place de Soviret</dd></div>
+        </dl>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Tapas</span><span>Croquettes</span><span>Tartares</span><span>Pastas</span><span>Boulettes</span><span>Braises</span><span>Desserts</span><span>Bières</span><span>Vins</span><span>Concerts</span>
+          <span>Tapas</span><span>Croquettes</span><span>Tartares</span><span>Pastas</span><span>Boulettes</span><span>Braises</span><span>Desserts</span><span>Bières</span><span>Vins</span><span>Concerts</span>
         </div>
       </div>
     </section>
@@ -75,77 +90,133 @@
     <!-- CARTE -->
     <section class="section" id="carte">
       <div class="wrap">
-        <header class="section__head reveal">
-          <p class="eyebrow">La carte</p>
-          <h2>Choisissez votre bar.</h2>
-          <p class="muted">Une seule adresse, plein d'envies. On partage, on picore, on reste.</p>
+        <header class="head reveal">
+          <p class="eyebrow">01 — La carte</p>
+          <h2>Neuf comptoirs,<br><em>une seule table.</em></h2>
         </header>
-        <ul class="bars">
-          <li class="bar reveal"><span class="bar__n">01</span><h3>Tapas</h3><p>Petites assiettes à partager entre amis.</p></li>
-          <li class="bar reveal"><span class="bar__n">02</span><h3>Croquettes</h3><p>Croustillantes dehors, fondantes dedans.</p></li>
-          <li class="bar reveal"><span class="bar__n">03</span><h3>Tartares</h3><p>Préparés minute, assaisonnés avec soin.</p></li>
-          <li class="bar reveal"><span class="bar__n">04</span><h3>Pastas</h3><p>Des pâtes généreuses et réconfortantes.</p></li>
-          <li class="bar reveal"><span class="bar__n">05</span><h3>Boulettes</h3><p>Un classique belge, fait maison.</p></li>
-          <li class="bar bar--feature reveal"><span class="bar__n">06</span><h3>Grillades sur braises</h3><p>Le feu de bois, la vraie cuisson. Notre signature.</p></li>
-          <li class="bar reveal"><span class="bar__n">07</span><h3>Desserts</h3><p>Pour finir en douceur.</p></li>
-          <li class="bar bar--feature reveal"><span class="bar__n">08</span><h3>Bières belges</h3><p>Uniquement artisanales. Une sélection de brasseries locales.</p></li>
-          <li class="bar reveal"><span class="bar__n">09</span><h3>Vins</h3><p>Au verre ou à la bouteille.</p></li>
-        </ul>
+
+        <div class="tabs reveal" role="tablist" aria-label="Catégories de la carte">
+          <button role="tab" aria-selected="true" aria-controls="p-partager" id="t-partager">À partager</button>
+          <button role="tab" aria-selected="false" aria-controls="p-plats" id="t-plats" tabindex="-1">Plats</button>
+          <button role="tab" aria-selected="false" aria-controls="p-boire" id="t-boire" tabindex="-1">À boire</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-partager" aria-labelledby="t-partager">
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Tapas</h3><p>Petites assiettes qui circulent au milieu de la table.</p></article>
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Croquettes</h3><p>Croûte dorée, cœur fondant. Le réflexe belge.</p></article>
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Tartares</h3><p>Préparés à la minute, assaisonnés à votre goût.</p></article>
+        </div>
+        <div class="panel" role="tabpanel" id="p-plats" aria-labelledby="t-plats" hidden>
+          <article class="dish dish--hot"><span class="dish__k">Signature</span><h3>Grillades sur braises</h3><p>Le feu, le temps, la fumée. Rien de plus.</p></article>
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Pastas</h3><p>Généreuses, réconfortantes, faites pour le midi.</p></article>
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Boulettes</h3><p>Le classique de comptoir, version maison.</p></article>
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Desserts</h3><p>Pour finir sur une note douce.</p></article>
+        </div>
+        <div class="panel" role="tabpanel" id="p-boire" aria-labelledby="t-boire" hidden>
+          <article class="dish dish--hot"><span class="dish__k">Bar à</span><h3>Bières belges</h3><p>Uniquement artisanales, choisies chez les brasseurs.</p></article>
+          <article class="dish"><span class="dish__k">Bar à</span><h3>Vins</h3><p>Au verre ou à la bouteille, pour accompagner les braises.</p></article>
+        </div>
+
+        <p class="note reveal">La carte évolue au fil des saisons — demandez l'ardoise du jour au comptoir.</p>
       </div>
     </section>
 
-    <!-- AMBIANCE -->
-    <section class="section section--alt" id="ambiance">
-      <div class="wrap ambiance">
+    <!-- BIÈRES -->
+    <section class="section section--ink" id="bieres">
+      <div class="wrap split">
         <div class="reveal">
-          <p class="eyebrow">Afterworks & concerts</p>
-          <h2>Le baromètre monte en fin de semaine.</h2>
-          <p class="muted">Terrasse, musique live et afterworks : le Baromètre est autant un lieu de rencontre qu'une table. Suivez notre page Facebook pour la programmation des concerts.</p>
-          <a class="link" href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener">Voir les prochains événements →</a>
+          <p class="eyebrow">02 — Le comptoir</p>
+          <h2>Pas de bière industrielle.<br><em>Jamais.</em></h2>
+          <p class="muted">Le Baromètre ne sert que des bières belges artisanales : des petites brasseries, des recettes qui ont du caractère, et un comptoir qui sait en parler.</p>
         </div>
-        <div class="mosaic reveal" aria-label="Photos du Baromètre">
-          <!-- Remplacez ces blocs par vos photos : <img src="img/terrasse.jpg" alt="..."> -->
-          <figure class="ph ph--a"><figcaption>La terrasse</figcaption></figure>
-          <figure class="ph ph--b"><figcaption>Le bar</figcaption></figure>
-          <figure class="ph ph--c"><figcaption>Les boulettes</figcaption></figure>
-          <figure class="ph ph--d"><figcaption>La façade</figcaption></figure>
+        <ol class="scale reveal" aria-label="Échelle du Baromètre">
+          <li><span>Léger</span><b>Blondes & saisons</b></li>
+          <li><span>Variable</span><b>Ambrées & fruitées</b></li>
+          <li><span>Beau temps</span><b>Triples & IPA</b></li>
+          <li><span>Tempête</span><b>Brunes & stouts</b></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="section" id="agenda">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">03 — Agenda</p>
+          <h2>Afterworks <em>& concerts.</em></h2>
+        </header>
+        <div class="agenda">
+          <article class="event reveal">
+            <p class="event__when">En semaine · fin de journée</p>
+            <h3>Afterwork</h3>
+            <p class="muted">On sort du bureau, on passe au comptoir. Planches, bières, et la semaine qui redescend.</p>
+          </article>
+          <article class="event reveal">
+            <p class="event__when">Selon programmation</p>
+            <h3>Concerts live</h3>
+            <p class="muted">Des groupes sur la petite scène. Les dates sont annoncées sur Facebook.</p>
+            <a class="link" href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener">Voir la programmation ↗</a>
+          </article>
+          <article class="event event--cta reveal">
+            <h3>Une table pour un groupe ?</h3>
+            <p>Anniversaire, équipe, fin de saison : appelez-nous, on s'organise.</p>
+            <a class="btn btn--light" href="tel:+3281451691">081 45 16 91</a>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- INFOS -->
-    <section class="section" id="infos">
-      <div class="wrap infos">
-        <div class="card reveal">
-          <p class="eyebrow">Horaires</p>
-          <h2 class="h3">Quand passer ?</h2>
-          <table class="hours" aria-label="Heures d'ouverture">
-            <tbody>
-              <tr data-day="1"><th scope="row">Lundi</th><td class="closed">Fermé</td></tr>
-              <tr data-day="2"><th scope="row">Mardi</th><td class="closed">Fermé</td></tr>
-              <tr data-day="3"><th scope="row">Mercredi</th><td>Midi & soir</td></tr>
-              <tr data-day="4"><th scope="row">Jeudi</th><td>Midi & soir</td></tr>
-              <tr data-day="5"><th scope="row">Vendredi</th><td>Midi & soir</td></tr>
-              <tr data-day="6"><th scope="row">Samedi</th><td>Midi</td></tr>
-              <tr data-day="0"><th scope="row">Dimanche</th><td class="closed">Fermé</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="card reveal" id="contact">
-          <p class="eyebrow">Accès</p>
-          <h2 class="h3">Où nous trouver ?</h2>
-          <address>
-            11, Rue Camille Giroul<br>5150 Floreffe, Belgique
-          </address>
-          <p class="muted small">Grand parking sur la place de Soviret.</p>
-          <div class="actions">
-            <a class="btn" href="tel:+3281451691">Appeler</a>
-            <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=11+Rue+Camille+Giroul+5150+Floreffe">Itinéraire</a>
+    <section class="section section--soft" id="infos">
+      <div class="wrap">
+        <header class="head reveal">
+          <p class="eyebrow">04 — Infos pratiques</p>
+          <h2>On vous attend.</h2>
+        </header>
+        <div class="infos">
+          <div class="card reveal">
+            <h3>Horaires</h3>
+            <table class="hours">
+              <caption class="sr">Heures d'ouverture</caption>
+              <tbody>
+                <tr data-day="1"><th scope="row">Lundi</th><td class="off">Fermé</td></tr>
+                <tr data-day="2"><th scope="row">Mardi</th><td class="off">Fermé</td></tr>
+                <tr data-day="3"><th scope="row">Mercredi</th><td>Midi · Soir</td></tr>
+                <tr data-day="4"><th scope="row">Jeudi</th><td>Midi · Soir</td></tr>
+                <tr data-day="5"><th scope="row">Vendredi</th><td>Midi · Soir</td></tr>
+                <tr data-day="6"><th scope="row">Samedi</th><td>Midi</td></tr>
+                <tr data-day="0"><th scope="row">Dimanche</th><td class="off">Fermé</td></tr>
+              </tbody>
+            </table>
           </div>
-          <div class="map">
-            <iframe title="Carte : 11 Rue Camille Giroul, Floreffe" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          <div class="card reveal">
+            <h3>Adresse</h3>
+            <address>11, Rue Camille Giroul<br>5150 Floreffe — Belgique</address>
+            <p class="muted">Grand parking sur la place de Soviret.</p>
+            <div class="actions">
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=11+Rue+Camille+Giroul+5150+Floreffe" target="_blank" rel="noopener">Itinéraire</a>
+              <a class="btn btn--ghost" href="tel:+3281451691">Appeler</a>
+            </div>
+          </div>
+          <div class="map reveal">
+            <iframe title="Carte : 11 Rue Camille Giroul, 5150 Floreffe" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps?q=11+Rue+Camille+Giroul,+5150+Floreffe&output=embed"></iframe>
           </div>
+        </div>
+
+        <div class="faq reveal">
+          <details>
+            <summary>Faut-il réserver ?</summary>
+            <p>C'est conseillé, surtout le vendredi soir et les soirs de concert. Un coup de fil au 081 45 16 91 suffit.</p>
+          </details>
+          <details>
+            <summary>Où se garer ?</summary>
+            <p>Sur la place de Soviret, juste à côté : un grand parking gratuit.</p>
+          </details>
+          <details>
+            <summary>Peut-on venir juste pour boire un verre ?</summary>
+            <p>Bien sûr. C'est d'abord un bar : bières artisanales et vins au comptoir.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -153,10 +224,13 @@
 
   <footer class="footer">
     <div class="wrap footer__inner">
-      <p>Maquette non officielle réalisée à titre de démonstration · <span id="y"></span></p>
-      <a href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z" fill="currentColor"/></svg>
-      </a>
+      <p class="footer__big">Le Baromètre</p>
+      <div class="footer__row">
+        <p>Maquette non officielle réalisée à titre de démonstration · <span id="y"></span></p>
+        <a class="icon-btn" href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener" aria-label="Facebook du Baromètre">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z" fill="currentColor"/></svg>
+        </a>
+      </div>
     </div>
   </footer>
 
