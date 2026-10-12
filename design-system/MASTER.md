@@ -11,27 +11,32 @@ Généré avec le skill **UI UX Pro Max** (données `products.csv`, `ui-reasonin
 - **Must-have** : menu visible, horaires et accès bien en vue, photos de qualité (à fournir).
 - **Anti-patterns** : horaires inventés/obsolètes, photos de mauvaise qualité, contenu qui défile sans pause.
 
-## Style
-Vibrant & Block-based (#6) + Vintage/craft (#68) : grands blocs de couleur, typographie massive,
-grain papier statique, transitions de 200 à 300 ms, aucune animation infinie.
+## Identité (prioritaire sur les palettes du skill)
+Reprise de l'identité existante du Baromètre : logo noir / blanc / rouge vif, rouge #C32B2B et polices
+du site d'origine (Abril Fatface, Libre Baskerville, Josefin Sans). Les règles UX du skill restent appliquées.
 
-## Couleurs (Brewery #64, adaptées au fond crème)
+## Style
+Vibrant & Block-based (#6) en noir / blanc / rouge : grands blocs, typographie massive, ombres nettes,
+transitions de 200 à 300 ms, aucune animation infinie.
+
+## Couleurs
 | Token | Clair | Sombre |
 |---|---|---|
-| --bg | #FBF3E6 | #170C08 |
-| --surface | #FFFFFF | #22130D |
-| --fg | #450A0A | #F6E9D7 |
-| --muted | #6B4A3A | #C2AC98 |
-| --primary | #7C2D12 | #E0643F |
-| --secondary | #B91C1C | #F07A5A |
-| --accent (or) | #A16207 | #E8A23B |
-| --border | #E8D5BE | #3A2418 |
+| --bg | #FFFFFF | #0E0E0E |
+| --paper | #F4F2EF | #141414 |
+| --fg | #111111 | #F5F5F5 |
+| --muted | #555555 | #B3B3B3 |
+| --primary (rouge du site) | #C32B2B | #FF5A5F |
+| --secondary (noir du logo) | #1A1A1A | #F5F5F5 |
+| --accent (rouge vif du logo) | #E00010 | #FF3B3F |
+| --ink-accent (rouge sur noir) | #FF5A5F | #FF5A5F |
 
-Texte ≥ 4.5:1 sur son fond. L'or est réservé aux grands textes et aux éléments décoratifs en mode clair.
+Texte ≥ 4.5:1 sur son fond (vérifié dans les deux thèmes).
 
-## Typographie : « Retro Vintage » (#10)
-- Abril Fatface : titres du hero et grands titres uniquement.
-- Merriweather 300/400/700 : texte courant, 17px, interligne 1.7, lignes de 65 caractères maximum.
+## Typographie (polices du site d'origine)
+- Abril Fatface : titres.
+- Libre Baskerville : texte courant, 16px, interligne 1.75, lignes de 65 caractères maximum.
+- Josefin Sans : libellés, navigation, boutons (majuscules espacées).
 
 ## UX (ux-guidelines.csv)
 Défilement fluide et `scroll-padding-top` égal à la hauteur de la nav (#1, #2, #100) · lien d'évitement (#45) ·
