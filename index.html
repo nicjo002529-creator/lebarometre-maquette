@@ -12,7 +12,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -22,21 +21,16 @@
     <div class="wrap nav__inner">
       <a href="#top" class="brand" aria-label="Le Baromètre, retour en haut">
         <img class="logo logo--on-light" src="img/logo-dark.png" alt="Baromètre" width="292" height="114">
-        <img class="logo logo--on-dark" src="img/logo-light.png" alt="" width="292" height="114">
       </a>
       <nav aria-label="Navigation principale" class="nav__nav">
         <ul class="nav__links" id="menu">
-          <li><a href="#carte">La carte</a></li>
+          <li><a href="#la-carte" data-open-menu>La carte</a></li>
           <li><a href="#comptoir">Bières</a></li>
           <li><a href="#agenda">Agenda</a></li>
           <li><a href="#infos">Horaires & accès</a></li>
         </ul>
       </nav>
       <div class="nav__end">
-        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Basculer le thème clair ou sombre">
-          <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        </button>
         <a class="btn btn--sm hide-sm" href="tel:+3281451691">Réserver</a>
         <button class="icon-btn nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -52,7 +46,6 @@
         <div class="hero__copy">
           <h1 id="hero-title" class="hero__logo">
             <img class="logo logo--on-light" src="img/logo-dark.png" alt="Le Baromètre" width="292" height="114">
-            <img class="logo logo--on-dark" src="img/logo-light.png" alt="" width="292" height="114">
           </h1>
           <p class="kicker">Bar · Cuisine · Concerts — Floreffe</p>
           <p class="hero__tagline display">Ici, on mesure<br>la bonne humeur.</p>
@@ -62,7 +55,7 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
               Réserver une table
             </a>
-            <a class="btn btn--outline btn--lg" href="#carte">Voir la carte</a>
+            <a class="btn btn--outline btn--lg" href="#la-carte" data-open-menu>Voir la carte</a>
           </div>
         </div>
 
@@ -87,38 +80,113 @@
       </ul>
     </section>
 
-    <!-- CARTE : bento de blocs -->
+    <!-- CARTE : aperçu + bouton vers la carte complète -->
     <section class="section" id="carte" aria-labelledby="carte-title">
-      <div class="wrap">
-        <header class="head">
+      <div class="wrap carte-intro">
+        <div>
           <p class="kicker">La carte</p>
-          <h2 id="carte-title" class="h2">Neuf comptoirs, une seule table.</h2>
-          <p class="muted measure">Le principe : on commande plusieurs « bars », on partage, on recommande. La carte suit les saisons — demandez l'ardoise du jour.</p>
-        </header>
-
-        <div class="bento">
-          <article class="block block--primary block--xl">
-            <span class="tag">Signature</span>
-            <h3>Grillades sur braises</h3>
-            <p>Le feu, le temps, la fumée. Une cuisson franche, rien de plus.</p>
-            <svg class="block__art" viewBox="0 0 120 120" aria-hidden="true"><path d="M60 14c10 18 26 26 26 50a26 26 0 0 1-52 0c0-12 6-20 12-26 0 10 4 16 10 18-4-14 0-30 4-42z" fill="currentColor" opacity=".9"/></svg>
-          </article>
-          <article class="block block--accent block--tall">
-            <span class="tag">100 % artisanal</span>
-            <h3>Bières belges</h3>
-            <p>Uniquement des brasseries artisanales.</p>
-            <svg class="block__art" viewBox="0 0 120 120" aria-hidden="true"><path d="M34 30h44v66a8 8 0 0 1-8 8H42a8 8 0 0 1-8-8z" fill="none" stroke="currentColor" stroke-width="6"/><path d="M78 44h10a10 10 0 0 1 10 10v14a10 10 0 0 1-10 10H78" fill="none" stroke="currentColor" stroke-width="6"/><path d="M30 30c0-10 10-14 18-10 4-8 18-8 22 0 8-4 14 2 12 10z" fill="currentColor"/></svg>
-          </article>
-          <article class="block"><span class="tag">À partager</span><h3>Tapas</h3><p>Des petites assiettes au milieu de la table.</p></article>
-          <article class="block"><span class="tag">À partager</span><h3>Croquettes</h3><p>Croûte dorée, cœur fondant.</p></article>
-          <article class="block block--secondary"><span class="tag">Minute</span><h3>Tartares</h3><p>Préparés à la commande, assaisonnés à votre goût.</p></article>
-          <article class="block"><span class="tag">Plat</span><h3>Pastas</h3><p>Généreuses et réconfortantes.</p></article>
-          <article class="block"><span class="tag">Maison</span><h3>Boulettes</h3><p>Le classique de comptoir belge.</p></article>
-          <article class="block block--ink"><span class="tag">Cave</span><h3>Vins</h3><p>Au verre ou à la bouteille.</p></article>
-          <article class="block"><span class="tag">Pour finir</span><h3>Desserts</h3><p>Une note douce avant le café.</p></article>
+          <h2 id="carte-title" class="h2">À partager, ou pas.</h2>
+          <p class="muted measure">Planchas à partager, croquettes maison, pâtes, grillades cuites sur braises… La carte change avec les saisons.</p>
+          <button class="btn btn--lg" type="button" data-open-menu>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Voir la carte
+          </button>
         </div>
+        <ul class="carte-cats" aria-label="Rubriques de la carte">
+          <li><span>01</span>Bar à planchas</li>
+          <li><span>02</span>Bar de partage</li>
+          <li><span>03</span>Plats</li>
+          <li><span>04</span>Bar à pasta</li>
+          <li class="is-hot"><span>05</span>Bar à grillades <em>sur braises</em></li>
+        </ul>
       </div>
     </section>
+
+    <!-- CARTE COMPLÈTE (boîte de dialogue) -->
+    <dialog class="menu" id="la-carte" aria-labelledby="menu-title">
+      <div class="menu__head">
+        <img class="menu__logo" src="img/logo-dark.png" alt="" width="292" height="114">
+        <div>
+          <h2 id="menu-title" class="menu__title">La carte</h2>
+          <p class="menu__sub">Carte de juillet 2026 · prix en euros</p>
+        </div>
+        <button class="icon-btn menu__close" type="button" data-close-menu aria-label="Fermer la carte">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+
+      <nav class="menu__nav" aria-label="Rubriques">
+        <a href="#m-planchas">Planchas</a>
+        <a href="#m-partage">Partage</a>
+        <a href="#m-plats">Plats</a>
+        <a href="#m-pasta">Pasta</a>
+        <a href="#m-grillades">Grillades</a>
+      </nav>
+
+      <div class="menu__body">
+        <section class="menu__cat" id="m-planchas" aria-labelledby="m-planchas-t">
+          <h3 id="m-planchas-t">Bar à planchas <small>à partager selon vos envies</small></h3>
+          <div class="dish"><p class="dish__name">Viva Tapas</p><p class="dish__price">12,50 <small>/ pers.</small></p>
+            <p class="dish__desc">Houmous zaatar &amp; grissini · Olives · Mortadella · Crevettes · Pilon de poulet épicé · Pão de queijo · Croustade &amp; tapenade</p></div>
+          <div class="dish"><p class="dish__name">Panisses <small>spécialité marseillaise</small></p><p class="dish__price">10,50</p>
+            <p class="dish__desc">Frites de purée de pois chiches, herbes et ail</p></div>
+        </section>
+
+        <section class="menu__cat" id="m-partage" aria-labelledby="m-partage-t">
+          <h3 id="m-partage-t">Bar de partage <small>ou pas</small></h3>
+          <div class="dish"><p class="dish__name">Poêlée de pâtes fiduà</p><p class="dish__price">15</p>
+            <p class="dish__desc">Chorizo &amp; crevettes Nobashi</p></div>
+          <div class="dish"><p class="dish__name">Croquettes de crevettes <small>maison</small></p><p class="dish__price">18 <small>2 pcs</small> · 27 <small>3 pcs</small></p>
+            <p class="dish__desc">Mayonnaise aux herbes fraîches · Salade</p></div>
+          <div class="dish"><p class="dish__name">Croquettes scampi basilic <small>artisanales</small></p><p class="dish__price">16 <small>2 pcs</small> · 24 <small>3 pcs</small></p>
+            <p class="dish__desc">Mayonnaise aux herbes fraîches · Salade</p></div>
+          <div class="dish"><p class="dish__name">Vitello tonnato</p><p class="dish__price">16</p>
+            <p class="dish__desc">Veau basse température, sauce thon, câpres &amp; roquette</p></div>
+          <div class="dish"><p class="dish__name">Carpaccio de bœuf Holstein fumé</p><p class="dish__price">18</p>
+            <p class="dish__desc">Burrata, huile basilic &amp; roquette</p></div>
+          <div class="dish"><p class="dish__name">Cassolette de scampis</p><p class="dish__price">18</p>
+            <p class="dish__desc">Curry · Tomate · Lait de coco · Gingembre · Ail</p></div>
+        </section>
+
+        <section class="menu__cat" id="m-plats" aria-labelledby="m-plats-t">
+          <h3 id="m-plats-t">Plats</h3>
+          <div class="dish"><p class="dish__name">Boulettes à l'italienne</p><p class="dish__price">19,50</p>
+            <p class="dish__desc">Cœur de mozza · Basilic · Graines — salade &amp; frites maison coupées à la main, cuites à la graisse de bœuf</p></div>
+          <div class="dish"><p class="dish__name">Tartare de bœuf espagnol</p><p class="dish__price">24</p>
+            <p class="dish__desc">Salade &amp; patatas</p></div>
+          <div class="dish"><p class="dish__name">Vege bowl</p><p class="dish__price">24</p>
+            <p class="dish__desc">Purée de betterave &amp; feta, pois chiches grillés aux épices, carottes fondantes, chou-fleur au curry, falafels</p></div>
+        </section>
+
+        <section class="menu__cat" id="m-pasta" aria-labelledby="m-pasta-t">
+          <h3 id="m-pasta-t">Bar à pasta</h3>
+          <div class="dish"><p class="dish__name">Paccheri</p><p class="dish__price">22</p>
+            <p class="dish__desc">Saucisses au fenouil · Artichaut · Oignons · Tomates</p></div>
+        </section>
+
+        <section class="menu__cat" id="m-grillades" aria-labelledby="m-grillades-t">
+          <h3 id="m-grillades-t">Bar à grillades <small>cuisson sur braises</small></h3>
+          <div class="dish"><p class="dish__name">Tex-Mex burger</p><p class="dish__price">22</p>
+            <p class="dish__desc">Burger Angus · Guacamole · Cheddar · Oignons rouges · Sauce salsa · Nachos — salade &amp; frites maison</p></div>
+          <div class="dish"><p class="dish__name">Brochette d'agneau</p><p class="dish__price">25</p>
+            <p class="dish__desc">Sauce yaourt · Légumes rôtis &amp; poivrons grillés · Pommes de terre</p></div>
+          <div class="dish"><p class="dish__name">Chorizos grillés</p><p class="dish__price">25</p>
+            <p class="dish__desc">Pico de gallo à la coriandre et au citron vert</p></div>
+          <div class="dish"><p class="dish__name">Cassolette terre &amp; mer gratinée</p><p class="dish__price">28</p>
+            <p class="dish__desc">Ravioles scampis curry · Jambon ibérique · Saumon fumé · Scampis · Crème tomate au curry</p></div>
+          <div class="dish dish--star"><p class="dish__name">Entrecôte du moment, grillée sur braises</p><p class="dish__price">32</p>
+            <p class="dish__desc">Salade &amp; frites maison coupées à la main, cuites à la graisse de bœuf</p></div>
+          <div class="dish dish--extra"><p class="dish__name">Sauce à la minute</p><p class="dish__price">4</p>
+            <p class="dish__desc">Béarnaise · Poivre concassé · Sambre &amp; Meuse · Gorgonzola</p></div>
+        </section>
+
+        <p class="menu__note">Desserts, bières belges artisanales et vins : demandez la sélection du moment au comptoir.</p>
+      </div>
+
+      <div class="menu__foot">
+        <a class="btn" href="tel:+3281451691">Réserver · 081 45 16 91</a>
+      </div>
+    </dialog>
 
     <!-- COMPTOIR : storytelling brasserie -->
     <section class="section section--dark" id="comptoir" aria-labelledby="comptoir-title">
@@ -232,7 +300,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
       Appeler
     </a>
-    <a href="#carte">
+    <a href="#la-carte" data-open-menu>
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       Carte
     </a>
