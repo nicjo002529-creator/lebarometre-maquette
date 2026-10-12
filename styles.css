@@ -9,17 +9,17 @@
   --paper: #f4f2ef;
   --fg: #111111;
   --muted: #555555;
-  --primary: #c32b2b;      /* rouge du site d'origine */
+  --primary: #d4141e;      /* rouge du logo, assombri pour le texte (5.3:1 sur blanc) */
   --on-primary: #ffffff;
   --secondary: #1a1a1a;    /* noir du logo */
   --on-secondary: #ffffff;
-  --accent: #e00010;       /* rouge vif du logo (décor / grands éléments) */
+  --accent: #e91e28;       /* rouge exact du logo (grands aplats, décor) */
   --on-accent: #ffffff;
   --ink: #111111;
   --on-ink: #f5f5f5;
-  --ink-accent: #ff5a5f;   /* rouge lisible sur fond noir */
+  --ink-accent: #ff4a52;   /* rouge du logo, éclairci pour fond noir */
   --border: #dddddd;
-  --ring: #c32b2b;
+  --ring: #d4141e;
 
   --display: "Abril Fatface", Georgia, serif;
   --serif: "Libre Baskerville", Georgia, serif;
@@ -34,15 +34,15 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --bg: #0e0e0e; --surface: #1a1a1a; --paper: #141414; --fg: #f5f5f5; --muted: #b3b3b3;
-    --primary: #ff5a5f; --on-primary: #0e0e0e; --secondary: #f5f5f5; --on-secondary: #0e0e0e; --accent: #ff3b3f; --on-accent: #0e0e0e;
-    --ink: #000000; --on-ink: #f5f5f5; --border: #333333; --ring: #ff5a5f;
+    --primary: #ff4a52; --on-primary: #0e0e0e; --secondary: #f5f5f5; --on-secondary: #0e0e0e; --accent: #e91e28; --on-accent: #ffffff;
+    --ink: #000000; --on-ink: #f5f5f5; --border: #333333; --ring: #ff4a52;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
   --bg: #0e0e0e; --surface: #1a1a1a; --paper: #141414; --fg: #f5f5f5; --muted: #b3b3b3;
-  --primary: #ff5a5f; --on-primary: #0e0e0e; --secondary: #f5f5f5; --on-secondary: #0e0e0e; --accent: #ff3b3f; --on-accent: #0e0e0e;
-  --ink: #000000; --on-ink: #f5f5f5; --border: #333333; --ring: #ff5a5f;
+  --primary: #ff4a52; --on-primary: #0e0e0e; --secondary: #f5f5f5; --on-secondary: #0e0e0e; --accent: #e91e28; --on-accent: #ffffff;
+  --ink: #000000; --on-ink: #f5f5f5; --border: #333333; --ring: #ff4a52;
   color-scheme: dark;
 }
 
@@ -97,8 +97,7 @@ h3 { font: 700 1.35rem/1.25 var(--serif); }
 /* ---------- Nav ---------- */
 .nav { position: sticky; top: 0; z-index: 50; background: var(--bg); border-bottom: 2px solid var(--fg); }
 .nav__inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); }
-.brand { display: flex; align-items: center; min-height: 44px; gap: 10px; text-decoration: none; font: 400 1.5rem var(--display); }
-.brand__mark { width: 30px; height: 30px; color: var(--primary); }
+.brand { display: flex; align-items: center; min-height: 44px; text-decoration: none; }
 .nav__links { display: flex; gap: var(--space-4); list-style: none; margin: 0; padding: 0; }
 .nav__links a { text-decoration: none; font-family: var(--label); font-weight: 600; letter-spacing: .04em; font-size: .95rem; padding: 10px 0; border-bottom: 2px solid transparent; transition: border-color var(--dur); }
 .nav__links a:hover { border-color: var(--primary); }
@@ -115,13 +114,12 @@ h3 { font: 700 1.35rem/1.25 var(--serif); }
 /* ---------- Hero ---------- */
 .hero { padding: clamp(48px, 8vw, 96px) 0 var(--space-6); }
 .hero__grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
-.hero h1 { font-size: clamp(3rem, 8.4vw, 7rem); margin-bottom: var(--space-3); }
 .lead { font-size: clamp(1.05rem, 1.5vw, 1.2rem); font-weight: 300; max-width: 46ch; margin-bottom: var(--space-4); }
 .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
 .today {
   background: var(--surface); border: 2px solid var(--fg); border-radius: var(--radius);
-  padding: var(--space-4); box-shadow: 8px 8px 0 var(--primary);
+  padding: var(--space-4); box-shadow: 8px 8px 0 var(--accent);
 }
 .today__gauge { width: 120px; color: var(--accent); margin-bottom: var(--space-2); }
 #gauge-arc { transition: stroke-dashoffset 900ms var(--ease); }
@@ -225,7 +223,6 @@ address { font-style: normal; font-weight: 700; font-size: 1.1rem; margin-bottom
 
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: var(--on-ink); padding: var(--space-8) 0 var(--space-6); }
-.footer__big { font-size: clamp(3.2rem, 13vw, 10rem); margin: 0 0 var(--space-4); color: var(--ink-accent); }
 .footer__row { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); border-top: 1px solid rgba(246, 233, 215, .2); padding-top: var(--space-3); font-size: .9rem; opacity: .9; }
 .footer__row p { margin: 0; }
 .footer .icon-btn { color: var(--on-ink); border-color: rgba(246, 233, 215, .3); }
@@ -271,3 +268,25 @@ address { font-style: normal; font-weight: 700; font-size: 1.1rem; margin-bottom
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0ms !important; animation: none !important; }
 }
+
+/* ---------- Logo intégré ---------- */
+.logo { display: block; height: auto; }
+.logo--on-dark { display: none; }
+:root[data-theme="dark"] .logo--on-light { display: none; }
+:root[data-theme="dark"] .logo--on-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo--on-light { display: none; }
+  :root:not([data-theme="light"]) .logo--on-dark { display: block; }
+}
+.brand .logo { width: 128px; }
+.hero__logo { margin: 0 0 var(--space-3); line-height: 0; }
+.hero__logo .logo { width: clamp(260px, 44vw, 560px); }
+.hero__tagline { font-size: clamp(2rem, 4.6vw, 3.6rem); margin-bottom: var(--space-3); }
+.hero__tagline::after {
+  /* Trait rouge rappelant le manche de la fourchette du logo */
+  content: ""; display: block; width: 72px; height: 6px; border-radius: 3px; background: var(--accent); margin-top: var(--space-3);
+}
+.footer__logo { margin: 0 0 var(--space-4); }
+.footer__logo img { width: min(460px, 100%); height: auto; display: block; }
+.block--accent { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+@media (max-width: 760px) { .brand .logo { width: 108px; } }

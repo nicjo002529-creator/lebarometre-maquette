@@ -12,7 +12,8 @@ Généré avec le skill **UI UX Pro Max** (données `products.csv`, `ui-reasonin
 - **Anti-patterns** : horaires inventés/obsolètes, photos de mauvaise qualité, contenu qui défile sans pause.
 
 ## Identité (prioritaire sur les palettes du skill)
-Reprise de l'identité existante du Baromètre : logo noir / blanc / rouge vif, rouge #C32B2B et polices
+Logo officiel intégré (img/logo-dark.png sur fond clair, img/logo-light.png sur fond sombre, fond transparent).
+Identité : noir / blanc / rouge du logo (#E91E28) et polices
 du site d'origine (Abril Fatface, Libre Baskerville, Josefin Sans). Les règles UX du skill restent appliquées.
 
 ## Style
@@ -26,10 +27,10 @@ transitions de 200 à 300 ms, aucune animation infinie.
 | --paper | #F4F2EF | #141414 |
 | --fg | #111111 | #F5F5F5 |
 | --muted | #555555 | #B3B3B3 |
-| --primary (rouge du site) | #C32B2B | #FF5A5F |
+| --primary (rouge du logo, assombri pour le texte) | #D4141E | #FF4A52 |
 | --secondary (noir du logo) | #1A1A1A | #F5F5F5 |
-| --accent (rouge vif du logo) | #E00010 | #FF3B3F |
-| --ink-accent (rouge sur noir) | #FF5A5F | #FF5A5F |
+| --accent (rouge exact du logo, grands aplats) | #E91E28 | #E91E28 |
+| --ink-accent (rouge sur noir) | #FF4A52 | #FF4A52 |
 
 Texte ≥ 4.5:1 sur son fond (vérifié dans les deux thèmes).
 
