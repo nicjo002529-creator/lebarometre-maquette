@@ -53,27 +53,48 @@
   if (location.hash === "#la-carte") openMenu();
   addEventListener("popstate", function () { location.hash === "#la-carte" ? openMenu() : closeMenu(); });
 
-  // « Aujourd'hui » : uniquement les jours et services réels (pas d'heures inventées)
-  var SERVICES = { 3: "Midi et soir", 4: "Midi et soir", 5: "Midi et soir", 6: "Midi" };
+  // « Aujourd'hui » : horaires réels, heure de Bruxelles, mis à jour chaque minute
+  var LUNCH = [12 * 60, 14 * 60], DINNER = [19 * 60, 21 * 60 + 30];
+  var SLOTS = { 3: [LUNCH, DINNER], 4: [LUNCH, DINNER], 5: [LUNCH, DINNER], 6: [LUNCH] };
   var NAMES = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
-  var wd = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Brussels", weekday: "short" }).format(new Date());
-  var day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(wd);
-
-  var row = document.querySelector('.hours tr[data-day="' + day + '"]');
-  if (row) row.classList.add("is-today");
-
   var state = document.getElementById("today-state");
   var detail = document.getElementById("today-detail");
-  var service = SERVICES[day];
-  if (service) {
-    state.textContent = "Ouvert ce " + NAMES[day];
-    state.classList.add("is-open");
-    detail.textContent = service + " · réservation conseillée au 081 45 16 91.";
-  } else {
-    var next = day;
-    do { next = (next + 1) % 7; } while (!SERVICES[next]);
-    state.textContent = "Fermé ce " + NAMES[day];
-    detail.textContent = "Réouverture " + NAMES[next] + " · " + SERVICES[next].toLowerCase() + ".";
+
+  function fmt(m) { var h = Math.floor(m / 60), mm = m % 60; return h + "h" + (mm ? (mm < 10 ? "0" : "") + mm : ""); }
+
+  function nowInBrussels() {
+    var parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Brussels", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false
+    }).formatToParts(new Date());
+    var get = function (t) { return parts.find(function (p) { return p.type === t; }).value; };
+    return {
+      day: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(get("weekday")),
+      mins: (parseInt(get("hour"), 10) % 24) * 60 + parseInt(get("minute"), 10)
+    };
   }
+
+  function update() {
+    var n = nowInBrussels(), slots = SLOTS[n.day] || [];
+    document.querySelectorAll(".hours tr").forEach(function (tr) {
+      tr.classList.toggle("is-today", tr.getAttribute("data-day") === String(n.day));
+    });
+    var current = slots.filter(function (s) { return n.mins >= s[0] && n.mins < s[1]; })[0];
+    var later = slots.filter(function (s) { return n.mins < s[0]; })[0];
+    state.classList.toggle("is-open", !!current);
+    if (current) {
+      state.textContent = "Ouvert maintenant";
+      detail.textContent = "Jusqu'à " + fmt(current[1]) + ". Réservation au 081 45 16 91.";
+    } else if (later) {
+      state.textContent = "Fermé pour le moment";
+      detail.textContent = "Ouvre aujourd'hui à " + fmt(later[0]) + ".";
+    } else {
+      var d = n.day, steps = 0;
+      do { d = (d + 1) % 7; steps++; } while (!SLOTS[d]);
+      state.textContent = "Fermé pour le moment";
+      detail.textContent = "Ouvre " + (steps === 1 ? "demain" : NAMES[d]) + " à " + fmt(SLOTS[d][0][0]) + ".";
+    }
+  }
+  update();
+  setInterval(update, 60000);
 
 })();
