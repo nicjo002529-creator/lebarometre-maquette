@@ -281,19 +281,19 @@ body.menu-open { overflow: hidden; }
 .menu[open] { display: flex; flex-direction: column; animation: menu-in 240ms var(--ease); }
 .menu::backdrop { background: rgba(17, 17, 17, .6); }
 @keyframes menu-in { from { opacity: 0; transform: translateY(16px); } }
-.menu__head { display: flex; align-items: center; gap: var(--space-2); padding: 18px 20px; border-bottom: 2px solid var(--fg); }
+.menu__head { flex: none; display: flex; align-items: center; gap: var(--space-2); padding: 18px 20px; border-bottom: 2px solid var(--fg); }
 .menu__logo { width: 96px; height: auto; flex: none; }
 .menu__title { font: 400 1.8rem/1 var(--display); }
 .menu__sub { margin: 4px 0 0; font: 600 .78rem var(--label); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .menu__close { margin-left: auto; flex: none; }
-.menu__nav { display: flex; gap: 8px; overflow-x: auto; padding: 12px 20px; border-bottom: 1px solid var(--border); scrollbar-width: none; }
+.menu__nav { flex: none; display: flex; align-items: center; gap: 8px; overflow-x: auto; overflow-y: hidden; padding: 12px 20px; border-bottom: 1px solid var(--border); scrollbar-width: none; }
 .menu__nav a {
-  flex: none; min-height: 40px; display: inline-flex; align-items: center; padding: 0 14px; border: 2px solid var(--fg); border-radius: 999px;
+  flex: none; height: 40px; display: inline-flex; align-items: center; justify-content: center; padding: 3px 16px 0; line-height: 1; border: 2px solid var(--fg); border-radius: 999px;
   font: 700 .82rem var(--label); letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
   transition: background-color var(--dur), color var(--dur);
 }
 .menu__nav a:hover { background: var(--fg); color: var(--bg); }
-.menu__body { overflow-y: auto; padding: 8px 20px 24px; overscroll-behavior: contain; }
+.menu__body { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding: 8px 20px 24px; overscroll-behavior: contain; }
 .menu__cat { padding-top: 20px; }
 .menu__cat h3 {
   display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; color: var(--primary);
@@ -311,7 +311,7 @@ body.menu-open { overflow: hidden; }
 .dish--star .dish__name { color: var(--primary); }
 .dish--extra { border-bottom: 0; }
 .menu__note { margin-top: var(--space-3); font-style: italic; color: var(--muted); }
-.menu__foot { padding: 14px 20px; border-top: 2px solid var(--fg); display: flex; justify-content: flex-end; }
+.menu__foot { flex: none; padding: 14px 20px; border-top: 2px solid var(--fg); display: flex; justify-content: flex-end; }
 .menu__foot .btn { }
 
 @media (max-width: 1024px) { .carte-intro { grid-template-columns: 1fr; } }
