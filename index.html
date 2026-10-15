@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -40,7 +40,7 @@
   </header>
 
   <main id="main">
-        <section class="hero" aria-labelledby="hero-title">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <h1 id="hero-title" class="hero__logo">
@@ -63,9 +63,13 @@
           <p class="today__addr">11, Rue Camille Giroul<br>5150 Floreffe</p>
           <a class="link" href="https://www.google.com/maps/search/?api=1&query=11+Rue+Camille+Giroul+5150+Floreffe" target="_blank" rel="noopener">Itinéraire</a>
         </aside>
-      </div>    </section>
+        <figure class="hero__photo">
+          <img src="img/facade.jpg" alt="La façade du Baromètre avec son enseigne et ses parasols rouges" width="1400" height="944" fetchpriority="high">
+        </figure>
+      </div>
+    </section>
 
-        <section class="section" id="carte" aria-labelledby="carte-title">
+    <section class="section" id="carte" aria-labelledby="carte-title">
       <div class="wrap carte-intro">
         <div>
           <h2 id="carte-title" class="h2">La carte</h2>
@@ -83,9 +87,15 @@
           <li>Bar à grillades, cuisson sur braises</li>
         </ul>
       </div>
+      <div class="wrap gallery">
+        <figure><img src="img/croquettes.jpg" alt="Croquettes maison, salade et mayonnaise aux herbes" width="900" height="829" loading="lazy"><figcaption>Croquettes maison</figcaption></figure>
+        <figure><img src="img/grillade.jpg" alt="Deux burgers sur la grille, au-dessus des braises" width="1000" height="750" loading="lazy"><figcaption>Cuisson sur braises</figcaption></figure>
+        <figure><img src="img/boulettes.jpg" alt="Boulettes au cœur de mozzarella" width="1000" height="750" loading="lazy"><figcaption>Boulettes à l'italienne</figcaption></figure>
+        <figure><img src="img/trancheuse.jpg" alt="La trancheuse Berkel du bar" width="900" height="888" loading="lazy"><figcaption>La trancheuse Berkel</figcaption></figure>
+      </div>
     </section>
 
-        <dialog class="menu" id="la-carte" aria-labelledby="menu-title">
+    <dialog class="menu" id="la-carte" aria-labelledby="menu-title">
       <div class="menu__head">
         <img class="menu__logo" src="img/logo-dark.png" alt="" width="292" height="114">
         <div>
@@ -170,18 +180,21 @@
       </div>
     </dialog>
 
-        <section class="section section--dark" id="comptoir" aria-labelledby="comptoir-title">
+    <section class="section section--dark" id="comptoir" aria-labelledby="comptoir-title">
       <div class="wrap">
         <h2 id="comptoir-title" class="h2">Bières et vins</h2>
         <p class="measure">Uniquement des bières belges artisanales. Vins au verre ou à la bouteille.</p>
       </div>
     </section>
 
-        <section class="section" id="agenda" aria-labelledby="agenda-title">
-      <div class="wrap">
+    <section class="section" id="agenda" aria-labelledby="agenda-title">
+      <div class="wrap split-photo">
+        <div>
         <h2 id="agenda-title" class="h2">Afterworks et concerts</h2>
         <p class="measure">Les dates sont annoncées sur la page Facebook du Baromètre.</p>
         <a class="btn btn--outline" href="https://facebook.com/barometrefloreffe" target="_blank" rel="noopener">Voir la page Facebook</a>
+        </div>
+        <figure class="photo"><img src="img/terrasse-soir.jpg" alt="La terrasse en soirée, sous les guirlandes lumineuses" width="1000" height="991" loading="lazy"></figure>
       </div>
     </section>
 
@@ -232,6 +245,7 @@
             </table>
           </div>
           <div class="card">
+            <img class="card__photo" src="img/batiment.jpg" alt="Le bâtiment du Baromètre vu de la rue" width="1000" height="978" loading="lazy">
             <h3>Adresse</h3>
             <address>11, Rue Camille Giroul<br>5150 Floreffe</address>
             <p class="muted">Grand parking sur la place de Soviret.</p>
@@ -276,6 +290,6 @@
     </a>
   </nav>
 
-  <script src="main.js?v=10"></script>
+  <script src="main.js?v=12"></script>
 </body>
 </html>
