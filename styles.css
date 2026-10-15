@@ -62,16 +62,16 @@ h3 { font: 700 1.35rem/1.25 var(--serif); }
   display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   min-height: 48px; padding: 0 22px; border-radius: 12px; border: 2px solid var(--primary);
   background: var(--primary); color: var(--on-primary); font: 700 .98rem var(--label); text-decoration: none; cursor: pointer;
-  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
-  box-shadow: 4px 4px 0 var(--fg);
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
 }
 .btn svg { width: 18px; height: 18px; flex: none; }
-.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--fg); }
-.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--fg); }
+.btn:hover { background: var(--fg); border-color: var(--fg); }
+.btn:active { opacity: .85; }
 .btn--lg { min-height: 56px; padding: 0 28px; font-size: 1.05rem; }
-.btn--sm { min-height: 44px; padding: 0 16px; font-size: .92rem; box-shadow: 3px 3px 0 var(--fg); }
+.btn--sm { min-height: 44px; padding: 0 16px; font-size: .92rem; }
 .btn--outline { background: transparent; color: var(--fg); border-color: var(--fg); }
-.btn--light { background: var(--on-primary); color: var(--primary); border-color: var(--on-primary); box-shadow: 4px 4px 0 var(--ink); }
+.btn--outline:hover { background: var(--fg); color: var(--bg); }
+.btn--light { background: var(--on-primary); color: var(--primary); border-color: var(--on-primary); }
 .icon-btn {
   width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; cursor: pointer;
   border: 2px solid var(--border); background: transparent; color: var(--fg); transition: border-color var(--dur);
@@ -98,10 +98,8 @@ h3 { font: 700 1.35rem/1.25 var(--serif); }
 
 .today {
   background: var(--surface); border: 2px solid var(--fg); border-radius: var(--radius);
-  padding: var(--space-4); box-shadow: 8px 8px 0 var(--accent);
+  padding: var(--space-4); border-top: 6px solid var(--accent);
 }
-.today__gauge { width: 120px; color: var(--accent); margin-bottom: var(--space-2); }
-#gauge-arc { transition: stroke-dashoffset 900ms var(--ease); }
 .today__title { font: 700 .8rem var(--label); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .today__state { font: 400 2rem/1.1 var(--display); margin-bottom: 8px; }
 .today__state.is-open { color: var(--primary); }
@@ -134,7 +132,6 @@ h3 { font: 700 1.35rem/1.25 var(--serif); }
   padding: var(--space-3); border-radius: var(--radius); border: 2px solid var(--fg); background: var(--surface);
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-.block:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--fg); }
 .block h3 { font: 400 1.75rem/1.05 var(--display); margin-bottom: 6px; }
 .block p { margin: 0; font-size: .95rem; color: var(--muted); }
 .tag { position: absolute; top: var(--space-3); left: var(--space-3); font: 700 .72rem var(--label); letter-spacing: .14em; text-transform: uppercase; }
@@ -279,7 +276,7 @@ body.menu-open { overflow: hidden; }
 .menu {
   width: min(760px, 100% - 24px); max-height: min(92vh, 100% - 24px); margin: auto; padding: 0;
   border: 2px solid var(--fg); border-radius: var(--radius); background: var(--surface); color: var(--fg);
-  box-shadow: 10px 10px 0 var(--accent); overflow: hidden;
+  overflow: hidden;
 }
 .menu[open] { display: flex; flex-direction: column; animation: menu-in 240ms var(--ease); }
 .menu::backdrop { background: rgba(17, 17, 17, .6); }
@@ -315,7 +312,7 @@ body.menu-open { overflow: hidden; }
 .dish--extra { border-bottom: 0; }
 .menu__note { margin-top: var(--space-3); font-style: italic; color: var(--muted); }
 .menu__foot { padding: 14px 20px; border-top: 2px solid var(--fg); display: flex; justify-content: flex-end; }
-.menu__foot .btn { box-shadow: 3px 3px 0 var(--fg); }
+.menu__foot .btn { }
 
 @media (max-width: 1024px) { .carte-intro { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {

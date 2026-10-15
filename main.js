@@ -77,9 +77,4 @@
     detail.textContent = "Réouverture " + NAMES[next] + " · " + SERVICES[next].toLowerCase() + ".";
   }
 
-  // Jauge : remplissage selon le service du jour
-  var level = service === "Midi et soir" ? 82 : service ? 55 : 18;
-  requestAnimationFrame(function () {
-    document.getElementById("gauge-arc").style.strokeDashoffset = 100 - level;
-  });
 })();

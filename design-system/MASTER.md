@@ -17,7 +17,7 @@ Identité : noir / blanc / rouge du logo (#E91E28) et polices
 du site d'origine (Abril Fatface, Libre Baskerville, Josefin Sans). Les règles UX du skill restent appliquées.
 
 ## Style
-Vibrant & Block-based (#6) en noir / blanc / rouge : grands blocs, typographie massive, ombres nettes,
+Vibrant & Block-based (#6) en noir / blanc / rouge : aplats, typographie massive, bordures franches,
 transitions de 200 à 300 ms, aucune animation infinie.
 
 ## Couleurs
@@ -43,3 +43,10 @@ Texte ≥ 4.5:1 sur son fond (vérifié dans les deux thèmes).
 Défilement fluide et `scroll-padding-top` égal à la hauteur de la nav (#1, #2, #100) · lien d'évitement (#45) ·
 navigation complète au clavier avec focus visible (#41) · `prefers-reduced-motion` (#9, #99) · espace réservé
 pour la carte avec `aspect-ratio` (#19) · zones tactiles ≥ 44 px · pas de défilement horizontal.
+
+## Rédaction et sobriété (pas de « tics » de site généré)
+- Uniquement des informations réelles du restaurant : pas de slogan inventé, pas de FAQ ni de texte d'ambiance inventés.
+- Titres de section simples (« La carte », « Horaires et accès »), sans sur-titre en petites capitales au-dessus.
+- Pas de numérotation décorative (01, 02…), pas de flèches (→, ↗) dans les liens, pas de tirets cadratins dans le texte.
+- Pas d'ombres décalées ni d'effet de soulèvement au survol ; survol des boutons = changement de couleur.
+- Le skill ne recense qu'un seul « tic d'IA » (dégradés violet / rose) ; les autres règles ci-dessus sont des choix éditoriaux.
