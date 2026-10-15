@@ -47,8 +47,7 @@
     a.addEventListener("click", function (e) {
       e.preventDefault();
       var t = document.getElementById(a.getAttribute("href").slice(1));
-      var body = menuDlg.querySelector(".menu__body");
-      body.scrollTo({ top: t.offsetTop - body.offsetTop - 8, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      t.scrollIntoView({ block: "start", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     });
   });
   if (location.hash === "#la-carte") openMenu();

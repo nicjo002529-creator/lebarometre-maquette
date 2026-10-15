@@ -365,3 +365,5 @@ figure { margin: 0; }
   .split-photo { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { .gallery figure:hover img { transform: none; } }
+.menu__allergens { margin-top: var(--space-1); font-size: .85rem; color: var(--muted); }
+.menu__cat { scroll-margin-top: 8px; }
