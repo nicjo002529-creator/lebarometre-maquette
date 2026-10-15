@@ -320,3 +320,17 @@ body.menu-open { overflow: hidden; }
   .menu__foot .btn { width: 100%; }
   .dish__price { font-size: 1.1rem; }
 }
+
+/* ---------- Avis ---------- */
+.avis { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.avis .btn { margin-top: var(--space-1); }
+.rating { background: var(--surface); border: 2px solid var(--fg); border-top: 6px solid var(--accent); border-radius: var(--radius); padding: var(--space-4); }
+.rating__score { font: 400 1.4rem/1 var(--display); color: var(--muted); margin-bottom: var(--space-2); }
+.rating__score span { font-size: clamp(4rem, 9vw, 6rem); color: var(--fg); }
+.stars { width: 180px; color: var(--accent); margin-bottom: var(--space-3); }
+.stars svg { width: 100%; height: auto; }
+.rating__facts { display: grid; grid-template-columns: 1fr 1fr; margin: 0; border-top: 1px dashed var(--border); }
+.rating__facts div { padding-top: var(--space-2); }
+.rating__facts dt { font: 600 .75rem var(--label); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.rating__facts dd { margin: 4px 0 0; font: 400 1.8rem var(--display); }
+@media (max-width: 1024px) { .avis { grid-template-columns: 1fr; } }

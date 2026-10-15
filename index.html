@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=9">
+  <link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -185,7 +185,34 @@
       </div>
     </section>
 
-        <section class="section section--paper" id="infos" aria-labelledby="infos-title">
+    <section class="section section--paper" id="avis" aria-labelledby="avis-title">
+      <div class="wrap avis">
+        <div>
+          <h2 id="avis-title" class="h2">Avis clients</h2>
+          <p class="muted measure">Note relevée sur Tripadvisor en octobre 2026.</p>
+          <a class="btn btn--outline" href="https://www.tripadvisor.fr/Restaurant_Review-g2028046-d12707262-Reviews-Barometre-Floreffe_The_Ardennes_Wallonia.html" target="_blank" rel="noopener">Lire les avis sur Tripadvisor</a>
+        </div>
+        <div class="rating">
+          <p class="rating__score"><span>4,6</span> / 5</p>
+          <div class="stars" role="img" aria-label="Note de 4,6 sur 5">
+            <svg viewBox="0 0 120 24" aria-hidden="true">
+              <defs>
+                <path id="star" d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/>
+                <clipPath id="stars-fill"><rect width="110.4" height="24"/></clipPath>
+              </defs>
+              <g fill="none" stroke="currentColor" stroke-width="1.4"><use href="#star"/><use href="#star" x="24"/><use href="#star" x="48"/><use href="#star" x="72"/><use href="#star" x="96"/></g>
+              <g fill="currentColor" clip-path="url(#stars-fill)"><use href="#star"/><use href="#star" x="24"/><use href="#star" x="48"/><use href="#star" x="72"/><use href="#star" x="96"/></g>
+            </svg>
+          </div>
+          <dl class="rating__facts">
+            <div><dt>Avis</dt><dd>50</dd></div>
+            <div><dt>Classement à Floreffe</dt><dd>2<sup>e</sup> sur 12</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="infos" aria-labelledby="infos-title">
       <div class="wrap">
         <h2 id="infos-title" class="h2 head">Horaires et accès</h2>
         <div class="infos">
@@ -249,6 +276,6 @@
     </a>
   </nav>
 
-  <script src="main.js?v=9"></script>
+  <script src="main.js?v=10"></script>
 </body>
 </html>
