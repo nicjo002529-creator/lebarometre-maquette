@@ -367,3 +367,53 @@ figure { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .gallery figure:hover img { transform: none; } }
 .menu__allergens { margin-top: var(--space-1); font-size: .85rem; color: var(--muted); }
 .menu__cat { scroll-margin-top: 8px; }
+
+/* ---------- Carte Google Maps soumise au consentement ---------- */
+.map { position: relative; }
+.map__placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: var(--space-2); padding: var(--space-3); text-align: center; background: var(--paper);
+}
+.map__placeholder p { margin: 0; max-width: 32ch; color: var(--muted); font-size: .95rem; }
+.map.is-loaded .map__placeholder { display: none; }
+.map iframe { position: absolute; inset: 0; }
+
+/* ---------- Pied de page : liens légaux ---------- */
+.footer__legal { display: flex; flex-wrap: wrap; gap: 4px 18px; flex: 1; justify-content: flex-end; }
+.footer__legal a { display: inline-flex; align-items: center; min-height: 44px; color: var(--on-ink); font-size: .85rem; text-underline-offset: 3px; }
+
+/* ---------- Bandeau cookies ---------- */
+.cookie {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 80; margin-inline: auto; max-width: 720px;
+  background: var(--surface); color: var(--fg); border: 2px solid var(--fg); border-top: 6px solid var(--accent);
+  border-radius: var(--radius); box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+}
+.cookie[hidden] { display: none; }
+.cookie__inner { padding: 20px 22px; }
+.cookie__title { font: 400 1.5rem/1.1 var(--display); margin-bottom: 8px; }
+.cookie__text { font-size: .95rem; margin-bottom: var(--space-2); }
+.cookie__text a { color: var(--primary); font-weight: 700; }
+.cookie__prefs { display: grid; gap: 10px; margin-bottom: var(--space-2); padding: 12px 0; border-block: 1px dashed var(--border); }
+.cookie__opt { display: flex; gap: 10px; align-items: flex-start; font-size: .92rem; cursor: pointer; }
+.cookie__opt input { width: 22px; height: 22px; margin: 2px 0 0; accent-color: var(--primary); flex: none; }
+.cookie__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.cookie__actions .btn { flex: 1 1 150px; min-height: 48px; }
+@media (max-width: 760px) { .cookie { bottom: 80px; left: 8px; right: 8px; } .cookie__inner { padding: 16px; } }
+
+/* ---------- Pages légales ---------- */
+.legal { padding: clamp(40px, 7vw, 80px) 0; }
+.legal__doc { max-width: 760px; }
+.legal h1 { font: 400 clamp(2.2rem, 5vw, 3.4rem)/1.05 var(--display); margin-bottom: var(--space-1); }
+.legal__date { color: var(--muted); font-size: .9rem; margin-bottom: var(--space-6); }
+.legal h2 { font: 400 1.6rem/1.15 var(--display); margin: var(--space-6) 0 var(--space-2); padding-top: var(--space-2); border-top: 2px solid var(--fg); }
+.legal h3 { font-size: 1.05rem; margin: var(--space-3) 0 var(--space-1); }
+.legal p, .legal li { max-width: 68ch; }
+.legal ul { padding-left: 1.2em; margin: 0 0 1rem; }
+.legal li { margin-bottom: 6px; }
+.legal a { color: var(--primary); }
+.legal table { width: 100%; border-collapse: collapse; margin: var(--space-2) 0 var(--space-3); font-size: .92rem; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+.legal thead th { border-bottom: 2px solid var(--fg); font-family: var(--label); text-transform: uppercase; letter-spacing: .06em; font-size: .78rem; }
+.legal__table { overflow-x: auto; }
+.todo { background: #fff3c4; color: #5c4400; padding: 1px 6px; border-radius: 4px; font-weight: 700; }
+.legal__back { display: inline-flex; align-items: center; min-height: 44px; margin-bottom: var(--space-3); color: var(--primary); font-weight: 700; }

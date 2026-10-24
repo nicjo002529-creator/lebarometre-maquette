@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Sans:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=15">
+  <link rel="stylesheet" href="styles.css?v=16">
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -288,9 +288,12 @@
               <a class="btn btn--outline" href="tel:+3281451691">Appeler</a>
             </div>
           </div>
-          <div class="map">
-            <iframe title="Carte : 11 Rue Camille Giroul, 5150 Floreffe" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=11+Rue+Camille+Giroul,+5150+Floreffe&output=embed"></iframe>
+          <div class="map" data-consent-src="https://www.google.com/maps?q=11+Rue+Camille+Giroul,+5150+Floreffe&output=embed" data-title="Carte : 11 Rue Camille Giroul, 5150 Floreffe">
+            <div class="map__placeholder">
+              <p>La carte est fournie par Google Maps, qui dépose des cookies.</p>
+              <button type="button" class="btn" data-consent-load>Afficher la carte</button>
+              <a class="link" href="https://www.google.com/maps/search/?api=1&query=11+Rue+Camille+Giroul+5150+Floreffe" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+            </div>
           </div>
         </div>      </div>
     </section>
@@ -301,6 +304,13 @@
       <p class="footer__logo"><img src="img/logo-light.png" alt="Le Baromètre" width="292" height="114" loading="lazy"></p>
       <div class="footer__row">
         <p>© <span id="y"></span> Le Baromètre, 11 rue Camille Giroul, 5150 Floreffe. 081 45 16 91</p>
+        <nav class="footer__legal" aria-label="Informations légales">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Confidentialité</a>
+          <a href="cookies.html">Cookies</a>
+          <a href="conditions.html">Conditions d'utilisation</a>
+          <a href="#" data-cookie-settings>Gérer les cookies</a>
+        </nav>
         <a class="icon-btn" href="https://www.facebook.com/p/Barom%C3%A8tre-Floreffe-61565102643443/" target="_blank" rel="noopener" aria-label="Page Facebook du Baromètre">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z" fill="currentColor"/></svg>
         </a>
@@ -323,6 +333,7 @@
     </a>
   </nav>
 
-  <script src="main.js?v=15"></script>
+  <script src="main.js?v=16"></script>
+  <script src="consent.js?v=16"></script>
 </body>
 </html>
